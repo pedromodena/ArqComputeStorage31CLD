@@ -1,15 +1,17 @@
-## Projeto de Conclusão - Arquitetura Compute e Storage - Turma 31CLD - FIAP
-Repositório contendo todo o conteudo do projeto final da matéria Arquitetura Computa e Storage.
+# Projeto de Conclusão - Arquitetura Compute e Storage - Turma 31CLD - FIAP
+## Repositório contendo todo o conteúdo do projeto final da matéria de Arquitetura Compute e Storage.
+
+No repositório encontra-se o projeto de diagramas de arquiteturas desenvolvidos no [Draw.io](https://www.drawio.com/), além da apresentação em PowerPoint e do documento explicativo do conteúdo abaixo, caso necessário.
 
 Integrantes:
-- **Pedro Modena – RM 348782**
-- **José Roberto – RM 348136**
-- **João Santino – RM 348314** 
-- **Vanderson Gonçalves – RM 347888**
-- **Guilherme Gonçalves – RM 347892**  
+- **Pedro Modena – RM 348782**
+- **José Roberto – RM 348136**
+- **João Santino – RM 348314** 
+- **Vanderson Gonçalves – RM 347888**
+- **Guilherme Gonçalves – RM 347892**  
 
 ## Cenário
-Nossa empresa de consultoria, especializada em soluções em nuvem para diversos segmentos de mercado, foi incumbida de migrar para a AWS um sistema de e-commerce que atualmente opera em uma infraestrutura local. 
+Nossa empresa de consultoria, especializada em soluções em nuvem para diversos segmentos de mercado, foi incumbida de migrar para a AWS um sistema de e-commerce Brasileiro que atualmente opera em uma infraestrutura local. 
 
 O sistema atual utiliza uma LAMP stack, servidores de mensageria, servidores MySQL, armazenamento NAS para fotos do site e servidores RabbitMQ. A infraestrutura opera com uma média de 60% de consumo de recursos e enfrenta picos de tráfego significativos, com previsão de crescimento de 200% ~ 300% nos próximos meses.
 
@@ -26,7 +28,7 @@ Conforme contextualizado anteriormente, esta arquitetura consiste nos seguinte s
 - Previsão de crescimento de 200%~300%
 
 <p align="center">
-<img src="./img/as-is.jpg" width="800px" height="auto">
+<img src="./img/as-is.png" width="800px" height="auto">
 </p>
 
 <h5 align="center">Arquitetura AS IS</h5
@@ -55,7 +57,7 @@ Transferir o armazenamento de imagens, vídeos e arquivos não estruturados do s
 
 Utilizar Amazon SQS para processamento assíncrono e mensagens, proporcionando uma arquitetura desacoplada e permitindo maior flexibilidade e escalabilidade.
 
-Além disso, utilizar o Amazon CloudWatch para monitorar a saúde e o desempenho dos recursos da aplicação, incluindo CPU, memória, tráfego de rede, entre outros. Com tais métricas é possível configurar alarmes e gatilhos para o acionamento de ações de autoescalonamento, ajustando a capacidade dos recursos automaticamente em respostas a picos de tráfego ou demanda.
+Além disso, utilizar o Amazon CloudWatch para monitorar a saúde e o desempenho dos recursos da aplicação, incluindo CPU, memória, tráfego de rede, entre outros. Com tais métricas é possível configurar alarmes e gatilhos para o acionamento de ações de auto escalonamento, ajustando a capacidade dos recursos automaticamente em respostas a picos de tráfego ou demanda.
 
 Utilizar o Amazon Cognito para fazer toda a parte de autenticação, autorização e gerenciamento de usuários, proporcionando uma maior segurança e facilidades com questões de acessos.
 
@@ -84,7 +86,7 @@ Utilizar o Amazon Cognito para fazer toda a parte de autenticação, autorizaç�
 ### -> Arquitetura Macro Solução
 
 <p align="center">
-<img src="./img/macro.jpg" width="800px" height="auto">
+<img src="./img/macro.png" width="800px" height="auto">
 </p>
 
 <h5 align="center">Arquitetura Macro</h5
@@ -140,3 +142,5 @@ Os principais benefícios da migração para a AWS com a abordagem de Re-factori
 - **Eficiência Operacional:** A infraestrutura serverless simplifica a administração, permitindo que a equipe foque mais no desenvolvimento e menos na manutenção da infraestrutura.
 
 - **Alta Disponibilidade e Resiliência:** A arquitetura proposta proporciona alta disponibilidade e recuperação automática em caso de falhas, garantindo a continuidade do serviço.
+
+- **Possibilidade de expansão para multi-regiões:** Com a arquitetura proposta, há uma facilidade maior no crescimento do negócio a nível global, podendo ser escalada em diversas regiões de forma rápida e sustentável. 
