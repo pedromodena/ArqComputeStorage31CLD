@@ -57,6 +57,8 @@ Utilizar Amazon SQS para processamento assíncrono e mensagens, proporcionando u
 
 Além disso, utilizar o Amazon CloudWatch para monitorar a saúde e o desempenho dos recursos da aplicação, incluindo CPU, memória, tráfego de rede, entre outros. Com tais métricas é possível configurar alarmes e gatilhos para o acionamento de ações de autoescalonamento, ajustando a capacidade dos recursos automaticamente em respostas a picos de tráfego ou demanda.
 
+Utilizar o Amazon Cognito para fazer toda a parte de autenticação, autorização e gerenciamento de usuários, proporcionando uma maior segurança e facilidades com questões de acessos.
+
 ## Infraestrutura TO BE
 
 ### -> A nova infraestrutura consiste em:
@@ -77,6 +79,8 @@ Além disso, utilizar o Amazon CloudWatch para monitorar a saúde e o desempenho
 
 - **Amazon CloudWatch:** Utilizar o CloudWatch para obtenção de métricas para monitoramento e acionamento do escalonamento automático.
 
+- **Amazon Cognito:** Utilizar o Cognito para gerenciar a parte de autenticação, autorização e gerenciamento de usuários.
+
 ### -> Arquitetura Macro Solução
 
 <p align="center">
@@ -89,7 +93,7 @@ Além disso, utilizar o Amazon CloudWatch para monitorar a saúde e o desempenho
 ### -> Arquitetura Geral Solução
 
 <p align="center">
-<img src="./img/to-be.jpg" width="800px" height="auto">
+<img src="./img/to-be.png" width="800px" height="auto">
 </p>
 
 <h5 align="center">Arquitetura To Be</h5
@@ -100,14 +104,24 @@ Além disso, utilizar o Amazon CloudWatch para monitorar a saúde e o desempenho
 
 ### -> Custos Mensais Aproximados:
 - **Amazon Route 53:** Geralmente cobrado com base no número de registros DNS e consultas. As taxas começam em cerca de $0,40 por milhão de consultas. 
+
 - **Amazon CloudFront:** Os custos dependem da quantidade de tráfego e dos locais de distribuição. Supondo que você lida com 50 TB de tráfego por mês (2000 pedidos/segundo * 3600 segundos * 24 horas * 30 dias * tamanho médio das respostas), a uma taxa média de $0,085 por GB, isso custaria aproximadamente $4,250.
+
 - **Amazon S3:** Custo baseado na quantidade de transferência de dados. Estimado em $0,02 por GB de dados transferidos. Variação estimada de $500 a $800 por mês, considerando armazenamento e transferência de dados.
+
 - **Amazon API Gateway:** Custo baseado no número de requisições. Aproximadamente $0,001 por requisição. Estimativa de $200 a $400 por mês.
-- **AWS Lambdas:** Custo baseado em solicitações, tempo de execução e memória alocada. Considerando 10.000.000 solicitações por mês, com um tempo de execução médio de 630ms, valor estimado de $1000 a $1500
-- **Amazon DynamoDB:** Custo baseado no tamanho, operações de leitura e gravação. Aproximado $1200 a $1500
+
+- **AWS Lambdas:** Custo baseado em solicitações, tempo de execução e memória alocada. Considerando 10.000.000 solicitações por mês, com um tempo de execução médio de 630ms, valor estimado de $1000 a $1500.
+
+- **Amazon DynamoDB:** Custo baseado no tamanho, operações de leitura e gravação. Aproximado $1200 a $1500.
+
 - **Amazon SQS:** Custo baseado no número de mensagens. Estimado em $0,40 por 1 milhão de mensagens. Variação estimada de $400 a $800 por mês.
+
 - **Amazon SES:** Custo baseado no número de e-mails enviados. Cada e-mail custa $0,0001. Considerando o envio de 5 milhões de e-mails mensais, o custo médio seria aproximadamente $500.
+
 - **Amazon CloudWatch:** Custo baseado nas quantidades de métricas configuradas. Valor aproximado de $2000 a $2500.
+
+- **Amazon Cognito:** Custo baseado na quantidade de usuários ativos. Valor médio de $4000 a $5000.
 
 <p align="center">
 <img src="./img/custos.png" width="800px" height="auto">
@@ -120,6 +134,9 @@ Além disso, utilizar o Amazon CloudWatch para monitorar a saúde e o desempenho
 Os principais benefícios da migração para a AWS com a abordagem de Re-factoring incluem:
 
 - **Escalabilidade Efetiva:** A nova arquitetura serverless permite escalar automaticamente em resposta à demanda, garantindo uma experiência consistente aos usuários, mesmo durante picos de tráfego.
+
 - **Otimização de Custos:** A utilização eficiente de recursos, a escalabilidade automática e a migração para serviços gerenciados contribuem para uma redução significativa nos custos operacionais.
+
 - **Eficiência Operacional:** A infraestrutura serverless simplifica a administração, permitindo que a equipe foque mais no desenvolvimento e menos na manutenção da infraestrutura.
+
 - **Alta Disponibilidade e Resiliência:** A arquitetura proposta proporciona alta disponibilidade e recuperação automática em caso de falhas, garantindo a continuidade do serviço.
